@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="login-twitch">
+    <h1>Login with Twitch</h1>
+    <a href="{% url 'twitch_auth' %}">Login with Twitch</a>
+</div>
+{% endblock content %}
