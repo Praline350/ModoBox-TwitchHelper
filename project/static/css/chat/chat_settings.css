@@ -1,0 +1,10 @@
+.chat-settings-main{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.chat-settings-container{
+    grid-column: 2;
+
+}

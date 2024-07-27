@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="chat-settings-main">
+    <div class="chat-settings-panel">
+        <div class="chat-panel-background"> 
+            <label for="chat-bakcground-color-picker">Choose Background Color</label>
+            <input type="color" id="chat-background-color-picker" name="chat-color" value="#000000">
+        </div>
+        <div class="chat-panel-font-color">
+            <label for="chat-font-color-picker">Choose Font Color</label>
+            <input type="color" id="chat-font-color-picker" name="chat-font-color" value="#000000">
+        </div>
+        <button id ="save-customization-btn">Save & Apply</button>
+    </div>
+    <div class="chat-settings-container">
+        {% include 'chat/twitch_chat.html'  %}
+    </div>
+</div>
+
+{% endblock content %}

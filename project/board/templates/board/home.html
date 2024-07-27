@@ -6,17 +6,19 @@
     <h1>Welcome, {{ user.username }}!</h1>
     <p>You have successfully authenticated with Twitch.</p>
     <h2>Channel Information</h2>
-    <p>Channel ID: {{ channel_info.id }}</p>
     <p>Channel Name: {{ channel_info.broadcaster_name }}</p>
     <p>Game: {{ channel_info.game_name }}</p>
     <p>Title: {{ channel_info.title }}</p>
 </div>
+
 
 <div class="chat-container">
 
     {% include 'chat/twitch_chat.html'  %}
 
 </div>
+
+<a href="{% url 'chat_settings' %}">Chat Customer</a>
 
 
 {% endblock content %}

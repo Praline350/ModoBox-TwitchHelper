@@ -7,7 +7,11 @@
     <meta name="twitch-access-token" content="{{ user.access_token|escapejs }}">
     <meta name="csrf-token" content="{{ csrf_token }}">
     <meta name="twitch-username" content="{{ user.username|escapejs }}">
-    <script src="{% static 'js/chatBox.js' %}"></script>
+    <script type="module" src="{% static 'js/chat/chatBox.js' %}"></script>
+    <script type="module" src="{% static 'js/chat/chatSettings.js' %}"></script>
+    <script type="module" src="{% static 'js/helper/getCsrfToken.js' %}"></script>
+    <script type="module" src="{% static 'js/helper/chatHelper.js' %}"></script>
+    <link href="{% static 'css/chat/chat_main.css' %}" rel="stylesheet">
     <title>Modo_box</title>
 </head>
 <body>

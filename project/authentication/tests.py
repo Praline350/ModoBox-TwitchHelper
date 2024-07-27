@@ -50,7 +50,8 @@ class TwitchAuthTests(TestCase):
             'data': [{
                 'id': 'test_twitch_id',
                 'login': 'testuser',
-                'email': 'testuser@example.com'
+                'email': 'testuser@example.com',
+                'display_name': 'TestUser'
             }]
         }
 
@@ -61,6 +62,7 @@ class TwitchAuthTests(TestCase):
         user = User.objects.get(email='testuser@example.com')
         self.assertIsNotNone(user)
         self.assertEqual(user.username, 'testuser')
+        self.assertEqual(user.display_name, 'TestUser')
         self.assertEqual(user.twitch_id, 'test_twitch_id')
         self.assertEqual(user.access_token, 'test_access_token')
         self.assertEqual(user.refresh_token, 'test_refresh_token')

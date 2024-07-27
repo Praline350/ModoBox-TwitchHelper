@@ -1,0 +1,26 @@
+#chat-box {
+    padding: 20px;
+    border: 2px solid black;
+    height: 600px;
+    width: 450px;
+    background-color: #f0f0f0;
+    overflow-y: auto; 
+    overflow-x: hidden; 
+}
+ .chat-message-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+ }
+
+.chat-message-author{
+
+}
+
+.chat-message-content{
+    padding-left: 5px;
+    margin: 0;
+    color : #000000;
+}
