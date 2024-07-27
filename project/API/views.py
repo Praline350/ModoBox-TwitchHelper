@@ -20,7 +20,7 @@ class MultipleSerializerMixin:
         return super().get_serializer_class()
     
 
-class ChatMesssageViewset(MultipleSerializerMixin, ReadOnlyModelViewSet):
+class ChatMesssageViewset(MultipleSerializerMixin, ModelViewSet):
     permission_classes = [IsAuthenticated]
     serializer_class = ChatMessageSerializer
 

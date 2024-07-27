@@ -7,4 +7,4 @@ class AdminUserChatSettings(admin.ModelAdmin):
 
 @admin.register(ChatMessage)
 class AdminChatMessage(admin.ModelAdmin):
-    list_display = ['user', 'message', 'timestamp']
+    list_display = ['username', 'message', 'timestamp']

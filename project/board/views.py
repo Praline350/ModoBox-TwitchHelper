@@ -13,7 +13,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from dotenv import load_dotenv
 
-from chat.utils import *
 from chat.views import *
 
 load_dotenv()
@@ -37,6 +36,5 @@ class HomeView(LoginRequiredMixin, View):
             'channel_info': channel_info,
             'user': user,
         }
-        start_twitch_chat(user)
         return render(request, 'board/home.html', context=context)
 

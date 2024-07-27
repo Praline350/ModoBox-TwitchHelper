@@ -7,19 +7,13 @@ User = get_user_model()
 
 
 class ChatMessageSerializer(serializers.ModelSerializer):
-    username = serializers.SerializerMethodField()
-    message = serializers.SerializerMethodField()
+
 
     class Meta:
         model = ChatMessage
-        fields = ['user', 'username', 'message','timestamp']
-
-    def get_username(self, obj):
-        return obj.user.username
+        fields = ['username', 'message', 'timestamp']
     
-    def get_message(self, obj):
-        # Nettoyer les caractères de nouvelle ligne
-        return obj.message.replace('\r', '').replace('\n', '')
+
 
 
 class UserSerializer(serializers.ModelSerializer):

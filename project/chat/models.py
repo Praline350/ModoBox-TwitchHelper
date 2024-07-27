@@ -16,12 +16,12 @@ class UserChatSettings(models.Model):
 
 
 class ChatMessage(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    username = models.CharField(max_length=100)
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.user.username}: {self.message[:30]} ({self.timestamp})'
+        return f'{self.username}: {self.message[:30]} ({self.timestamp})'
     
     
     class Meta:

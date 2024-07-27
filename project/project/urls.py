@@ -23,7 +23,7 @@ from authentication.views import *
 from board.views import *
 from API.views import *
 from chat.views import *
-from chat.utils import *
+
 
 
 router = routers.SimpleRouter()
@@ -51,6 +51,5 @@ urlpatterns = [
     
 
     # Chat
-    path('chat/', start_chat, name='chat'),
     path('chat/settings/', ChatSettings.as_view(), name='chat_settings'),
 ]

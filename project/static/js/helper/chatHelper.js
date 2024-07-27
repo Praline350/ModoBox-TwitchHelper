@@ -63,4 +63,9 @@ function applyChatSettings(settings) {
     }
 }
 
-export { loadChatSettings, saveChatSettings, applyChatSettings };
+function scrollToBottom() {
+    var chatBox = document.getElementById('chat-box');
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+export { loadChatSettings, saveChatSettings, applyChatSettings, scrollToBottom };
