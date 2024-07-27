@@ -37,6 +37,5 @@ class HomeView(LoginRequiredMixin, View):
             'channel_info': channel_info,
             'user': user,
         }
-        start_twitch_chat(user)
         return render(request, 'board/home.html', context=context)
 

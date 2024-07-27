@@ -1,11 +1,10 @@
-from django.conf import settings
-from django.contrib.auth import get_user_model
-from django.db import models
 
-User =get_user_model()
+from django.db import models
+from authentication.models import User
+
 
 class UserChatSettings(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     background_color = models.CharField(max_length=7, default='#ffffff')
     font_color = models.CharField(max_length=7, default='#000000')
 
@@ -16,7 +15,7 @@ class UserChatSettings(models.Model):
 
 
 class ChatMessage(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
 

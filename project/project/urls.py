@@ -51,6 +51,6 @@ urlpatterns = [
     
 
     # Chat
-    path('chat/', start_chat, name='chat'),
+    # path('chat/', start_chat, name='chat'),
     path('chat/settings/', ChatSettings.as_view(), name='chat_settings'),
 ]

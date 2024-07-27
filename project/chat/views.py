@@ -18,12 +18,12 @@ from chat.utils import *
 from authentication.models import *
 
 
-@login_required
-def start_chat(request):
-    user = request.user
-    ws_thread = start_twitch_chat(user)
-    print(f"Thread info: Name={ws_thread.name}, Alive={ws_thread.is_alive()}")
-    return render(request, 'chat/twitch_chat.html', {'user': user})
+# @login_required
+# def start_chat(request):
+#     user = request.user
+#     ws_thread = start_twitch_chat(user)
+#     print(f"Thread info: Name={ws_thread.name}, Alive={ws_thread.is_alive()}")
+#     return render(request, 'chat/twitch_chat.html', {'user': user})
 
 
 
@@ -32,5 +32,4 @@ class ChatSettings(View):
 
     def get(self, request):
         user = request.user
-        start_twitch_chat(user)
         return render(request, self.template_name)
