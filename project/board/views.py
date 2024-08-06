@@ -1,17 +1,10 @@
-import requests
-import os
 from django.conf import settings
-from django.shortcuts import redirect, render
-from django.contrib.auth import login
-from authentication.models import User
-from django.utils import timezone
-import datetime
 import requests
-import websocket
-import threading
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 from dotenv import load_dotenv
+import requests
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 from chat.views import *
 
@@ -32,6 +25,7 @@ class HomeView(LoginRequiredMixin, View):
         response = requests.get(f'https://api.twitch.tv/helix/channels?broadcaster_id={user.twitch_id}', headers=headers)
         response.raise_for_status()  # This will raise an HTTPError if the response was an error
         channel_info = response.json()['data'][0]
+        print(channel_info)
         context = {
             'channel_info': channel_info,
             'user': user,
