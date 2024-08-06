@@ -10,6 +10,12 @@ requests = "*"
 twitchio = "*"
 websocket-client = "*"
 djangorestframework = "*"
+channels = "*"
+channels-redis = "*"
+djangorestframework-simplejwt = "*"
+daphne = "*"
+whitenoise = "*"
+starlette = "*"
 
 [dev-packages]
 
