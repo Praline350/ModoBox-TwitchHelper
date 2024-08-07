@@ -18,6 +18,7 @@
 
 .stream-manager-chat
 {
+    padding-left: 5px;
     grid-column: 3;
     justify-self: center;
 }
