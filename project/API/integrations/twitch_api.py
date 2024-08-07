@@ -95,9 +95,7 @@ class TwitchAPI:
                     {
                     "title": "Definitely not."
                     }
-                ],
-                "prediction_window": 120
-            }'
+                ]
         """
 
         headers = {
