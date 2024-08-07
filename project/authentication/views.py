@@ -52,7 +52,6 @@ class TwitchCallback(APIView):
             token_expires = timezone.now() + datetime.timedelta(seconds=expires_in)
 
             user_info = twitch_api.get_user_info(access_token)
-            print(f"user_info: {user_info}")
             user = User.create_or_update_user(user_info, access_token, refresh_token, token_expires)
             
             login(request, user)

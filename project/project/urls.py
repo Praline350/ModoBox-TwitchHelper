@@ -40,6 +40,7 @@ urlpatterns = [
     # Boards
     path('home/', HomeView.as_view(), name='home'),
     path('board/<str:user>/stream_manager', StreamManager.as_view(), name='stream_manager'),
+    path('prediction/', CreatePrediction.as_view(), name='prediction'),
     
 
     # Chat

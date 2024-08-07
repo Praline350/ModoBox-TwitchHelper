@@ -30,7 +30,7 @@
         
         <div class="container-link animation-link circleBehind">
             <a href="{% url 'home'%}">Home</a>
-            <a>Stream Manager</a>
+            <a href="{% url 'stream_manager' user=request.user.username %}">Stream Manager</a>
             <a href="{% url 'chat_settings' %}">Custom Chat</a>
         </div>
 
