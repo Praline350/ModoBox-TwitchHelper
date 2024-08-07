@@ -10,7 +10,7 @@
     <p>Game: {{ channel_info.game_name }}</p>
     <p>Title: {{ channel_info.title }}</p>
 </div>
-
+<a href={% url 'stream_manager' user=request.user.username %}>Stream Manager</a>
 
 <div class="chat-container">
 

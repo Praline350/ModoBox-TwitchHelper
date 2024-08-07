@@ -1,5 +1,5 @@
 import  { scrollToBottom } from '../helper/chatHelper.js'
-import { saveMessage } from '../fetcher/saveMessage.js'
+// import { saveMessage } from '../fetcher/saveMessage.js'
 import { getCsrfToken } from '../helper/getCsrfToken.js';
 
 function setupWebSocket(accessToken, username, display_name) {
@@ -29,17 +29,17 @@ function setupWebSocket(accessToken, username, display_name) {
             chatBox.appendChild(messageDiv);
             messageDiv.appendChild(messageAuthor);
             messageDiv.appendChild(messageContent);
-            saveMessage(csrfToken, username, message)
-                .then(postResponse => {
-                    if (postResponse) {
-                        console.log('Message posté avec succès:', postResponse);
-                    } else {
-                        console.error('Échec de la publication du message');
-                    }
-                })
-                .catch(error => {
-                    console.error('Erreur lors de la publication du message:', error);
-                });
+            // saveMessage(csrfToken, username, message)
+            //     .then(postResponse => {
+            //         if (postResponse) {
+            //             console.log('Message posté avec succès:', postResponse);
+            //         } else {
+            //             console.error('Échec de la publication du message');
+            //         }
+            //     })
+            //     .catch(error => {
+            //         console.error('Erreur lors de la publication du message:', error);
+            //     });
             scrollToBottom();
         }
     };

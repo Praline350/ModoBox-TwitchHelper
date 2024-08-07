@@ -27,7 +27,7 @@ class TwitchAuth(APIView):
     def get(self, request):
         client_id = settings.TWITCH_CLIENT_ID
         redirect_uri = settings.TWITCH_REDIRECT_URI
-        scope = "user:read:email chat:read chat:edit"
+        scope = settings.TWITCH_SCOPES
         response_type = "code"
         # URL pour la redirection vers l'authentification Twitch
         auth_url = (
@@ -52,6 +52,7 @@ class TwitchCallback(APIView):
             token_expires = timezone.now() + datetime.timedelta(seconds=expires_in)
 
             user_info = twitch_api.get_user_info(access_token)
+            print(f"user_info: {user_info}")
             user = User.create_or_update_user(user_info, access_token, refresh_token, token_expires)
             
             login(request, user)

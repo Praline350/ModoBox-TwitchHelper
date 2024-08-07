@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="main-content">
+    <div class="stream-manager-navbar-container">
+        <a>Option</a>
+        <a>Option</a>
+        <a>Option</a>
+        <a>Option</a>
+        <a>Option</a>
+    </div>
+    <div class="stream-manager-container">
+        <div class="pannel-stream-manager-container">
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+            <div class="option-stream-manager-box"></div>
+        </div>
+        <div class="chat-container stream-manager-chat">
+            {% include 'chat/twitch_chat.html' %}
+        </div>
+    </div>
+</main>
+
+{% endblock content %}

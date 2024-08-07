@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    font-family: "Kanit", sans-serif;
+}
+
+a
+{
+    font-size: large;
+    color: #fff4ec;
+}
+
+p
+{
+    color: #fff4ec;
+}
+
+.main-content{
+    margin: 15px;
+    margin-top: 70px;
+    padding: 15px;
+    border: 2px solid black;
+}
+
+
+
+
+
+/* 
+
+COLOR PALLETE :
+
+Rose ebony : #5A3A31
+Old rose : #C98686
+air blue : #7C99B4
+Seashell : #FFF4EC
+Champagne pink : #E7CFBC
+
+*/
+

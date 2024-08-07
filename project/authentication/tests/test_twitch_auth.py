@@ -51,7 +51,8 @@ class TwitchAuthTests(TestCase):
                 'id': 'test_twitch_id',
                 'login': 'testuser',
                 'email': 'testuser@example.com',
-                'display_name': 'TestUser'
+                'display_name': 'TestUser',
+                'profile_image_url': 'http://example.com/profile.jpg'
             }]
         }
 
@@ -66,6 +67,7 @@ class TwitchAuthTests(TestCase):
         self.assertEqual(user.twitch_id, 'test_twitch_id')
         self.assertEqual(user.access_token, 'test_access_token')
         self.assertEqual(user.refresh_token, 'test_refresh_token')
+        self.assertEqual(user.profile_image_url, 'http://example.com/profile.jpg')
 
         # Vérifier que l'utilisateur est redirigé vers la page d'accueil
         self.assertEqual(response.status_code, 302)

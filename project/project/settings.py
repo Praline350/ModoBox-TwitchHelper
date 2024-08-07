@@ -169,6 +169,10 @@ AUTH_USER_MODEL = 'authentication.User'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.joinpath('media/')
 
+
+# Twitch configuration for API calls
+
 TWITCH_CLIENT_ID = os.getenv('TWITCH_CLIENT_ID')
 TWITCH_CLIENT_SECRET = os.getenv('TWITCH_CLIENT_SECRET')
 TWITCH_REDIRECT_URI = os.getenv('TWITCH_REDIRECT_URI')
+TWITCH_SCOPES = "user:read:email chat:read chat:edit channel:read:subscriptions channel:manage:broadcast moderator:read:followers channel:manage:predictions"

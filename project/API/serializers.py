@@ -7,8 +7,6 @@ User = get_user_model()
 
 
 class ChatMessageSerializer(serializers.ModelSerializer):
-
-
     class Meta:
         model = ChatMessage
         fields = ['username', 'message', 'timestamp']

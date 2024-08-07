@@ -1,0 +1,31 @@
+.nav-bar-container
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #C98686;
+}
+
+.nav-profile-image
+{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar-username
+{
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.profile-image
+{
+    height: 80px;
+    width: auto;
+    border-radius: 10px;
+}
+
+.container-link
+{
+    margin-right: 10px;
+}
