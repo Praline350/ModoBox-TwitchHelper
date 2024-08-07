@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Create Prediction</title>
+    <script src="{% static 'js/components/addOutcome.js' %}"></script>
+</head>
+<body>
+    <h1>Create Prediction</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {{ formset.management_form }}
+        <div id="outcome-forms">
+            {% for form in formset %}
+                <div class="dynamic-form">
+                    <div>
+                        <label for="{{ form.title.id_for_label }}">Titre:</label>
+                        {{ form.title }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div id="form-empty" style="display: none;">
+            {{ formset.empty_form.as_p }}
+        </div>
+        <button type="button" onclick="addForm()">Add Outcome</button>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from dotenv import load_dotenv
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from chat.views import *
 from API.integrations.twitch_api import *
+from board.forms import *
 
 load_dotenv()
 
@@ -56,14 +57,34 @@ class StreamManager(LoginRequiredMixin, View):
         
 
 class CreatePrediction(LoginRequiredMixin, View):
-    template_name = 'board/create_prediction.html'
+    template_name = 'board/forms/create_prediction.html'
 
     def post(self, request):
         user = request.user
         broadcaster_id = user.twitch_id
         access_token = user.access_token
-        context = {
-                'user': user,
+        form = PredictionForm(request.POST)
+        formset = OutcomeFormSet(request.POST)
+        if form.is_valid() and formset.is_valid():
+            twitch_api = TwitchAPI()
+            title = form.cleaned_data['title']
+            prediction_window = form.cleaned_data['prediction_window']
+            outcomes = [outcome_form.cleaned_data['title'] for outcome_form in formset if outcome_form.cleaned_data]
+            data = {
+                "title": title,
+                "outcomes": [{"title": outcome} for outcome in outcomes],
+                "prediction_window": prediction_window
             }
-        return render(request, self.template_name, context=context)
+            response = twitch_api.post_prediction(broadcaster_id, access_token, data)
+            print(response)
+            return redirect('home')
+        else:
+            return render(request, self.template_name, {'form': form, 'formset':formset})
+            
+            
+
+    def get(self, request):
+        form = PredictionForm()
+        formset = OutcomeFormSet()
+        return render(request, self.template_name, {'form': form, 'formset': formset})
 
